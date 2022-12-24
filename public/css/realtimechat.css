@@ -1,0 +1,144 @@
+
+li{
+    list-style: none;
+}
+
+input{
+    outline: none;
+    padding: .2rem;
+    border: none;
+    border-radius: .2rem;
+}
+
+button{
+    padding: .2rem .3rem;
+    background-color: rgb(47, 255, 64);
+    outline: none;
+    border: none;
+}
+
+#built-in-realtime-chat{
+    position: absolute;
+    right: 5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 1rem;
+    width: 25%;
+    height: 60%;
+    background-color: hsl(243, 70%, 90%);;
+    text-align: left;
+    padding: .5rem 0 0 .5rem;
+    border-radius: .5rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.received{
+    background-color: hsl(209, 91%, 58%);
+    max-width: 45%;
+    height: auto;
+    border-radius: .3rem;
+    padding: .2rem;
+    transform: translateX(-100px);
+    animation-fill-mode: forwards;
+    margin-bottom: .7rem;
+    animation-name: tryin;
+    animation-duration: 500ms;
+}
+
+.sent{
+    background-color: hsl(138, 77%, 49%);
+    color: black;
+    max-width: 45%;
+    height: auto;
+    border-radius: .3rem;
+    display: flex;
+    flex-direction: column;
+    padding: .2rem;
+    transform: translateX(100px);
+    margin-right: .5rem;
+    animation-fill-mode: forwards;
+    margin-bottom: .7rem;
+    animation-name: tryin;
+    animation-duration: 500ms;
+}
+
+#chat-input-area{
+    margin-bottom: .5rem;
+}
+
+#chat-input-area form{
+    display: flex;
+}
+#chat-input-area input{
+    flex: 1;
+}
+
+#send-chat-message{
+    width: 5rem;
+    margin-right: .5rem;
+}
+
+.user-name{
+    font-size: 1rem;
+    color: black;
+}
+
+.message{
+    font-size: 1.2rem;
+}
+
+.ex-girlfriend{
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+#built-in-realtime-chat::-webkit-scrollbar {
+    width: 0.25rem;
+  }
+  
+  #built-in-realtime-chat::-webkit-scrollbar-track {
+    background: #1e1e24;
+  }
+  
+  #built-in-realtime-chat::-webkit-scrollbar-thumb {
+    background: hsl(209, 91%, 58%);
+  }
+
+@keyframes tryin {
+    0%{
+
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+
+
+@media screen and (max-width: 1220px) {
+    #built-in-realtime-chat{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 60%;
+        transform: translate(-50%, -50%);
+        z-index: 110;
+    }
+    
+}
+
+
+@media screen and (max-width: 500px) {
+    #built-in-realtime-chat{
+        width: 90%;
+        height: 80%;
+    }
+
+    #chat-input-area input{
+        padding: .7rem;
+
+    }
+}

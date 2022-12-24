@@ -1,0 +1,311 @@
+/* Branch :- rancho/opstyling */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=K2D&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: wheat;
+  font-size: 3rem;
+  font-family: 'K2D','Poppins', sans-serif;
+  overflow: hidden;
+}
+
+button{
+  font-family: 'Hammersmith One', cursive;
+}
+
+
+.container-wrapper{
+  color: rgb(241, 241, 241);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: 
+  linear-gradient(45deg, hsl(244, 100%, 6%),hsl(245, 49%, 21%));
+}
+
+.container{
+  position: relative;
+  text-align: center;
+  max-width: 1200px;
+  width: 80%;
+}
+.temp-board {
+  display: flex;
+  justify-content: center;
+}
+
+
+.settings{
+  text-align: left;
+}
+
+.grid-item-container {
+  font-family: "Poppins", sans-serif;
+  position: relative;
+  display: flex;
+  user-select: none;
+  width: 6.5rem;
+  height: 6.5rem;
+  margin: 2px;
+  background-color: hsl(244, 47%, 54%);
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+
+.grid-item-mark-indicator-x:not(.marked)::after{
+  content: "X";
+  opacity: .3;
+}
+
+.grid-item-mark-indicator-o:not(.marked)::after{
+  content: "O";
+  opacity: .3;
+}
+
+.grid-item.marked{
+  animation: scale;
+  animation-duration: .25s;
+
+}
+
+.hero{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.hell{
+  background-color: rgb(255, 136, 136);
+}
+
+#game-title-history{
+  color: rgb(255, 255, 255);
+  opacity: .7;
+  font-size: 2.8rem;
+  animation: scaleText;
+  animation-duration: 1s;
+}
+
+
+#game-title-history{
+  color: rgb(255, 255, 255);
+  opacity: .7;
+  font-size: 2.8rem;
+}
+
+.show-the-text{
+  position: absolute;
+  top:10px;
+  margin-left: 50%;
+  transform: translate(-50%);
+  z-index: 12;
+}
+
+
+.replay-btn{
+  position: absolute;
+  margin-top: 10rem;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.2rem;
+  color: white;
+  background-color: hsl(209, 91%, 58%);
+  padding: .5rem 1.5rem;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all .2s;
+}
+
+.replay-btn-fix-it-later{
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  color: white;
+  background-color: hsl(209, 91%, 58%);
+  padding: .5rem 1.5rem;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all .2s;
+}
+
+.replay-btn:hover{
+  padding: .6rem 1.6rem;
+  background-color: hsl(209, 91%, 50%);
+}
+
+
+.room-container{
+  /* background-color: red; */
+}
+
+
+.lonely-mode{
+  display: flex;
+  align-items: center;
+  /* background-color: blue; */
+}
+
+
+#lonely-mode-text{
+  cursor: pointer;
+  margin-left: .5rem;
+  user-select: none;
+}
+
+.lonely-mode:hover{
+  color: hsl(209, 91%, 80%);
+  transform: scale(1.03);
+  transition: all .1s ease-in;
+}
+
+.not-allowed{
+  position: absolute;
+  display: none;
+  place-items: center;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 120;
+  color: white;
+}
+
+.not-allowed p {
+  user-select: none;
+}
+
+
+.replay-btn-fix-it-later:hover{
+  padding: .6rem 1.6rem;
+  background-color: hsl(209, 91%, 50%);
+}
+
+#game-over-screen{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  display: none;
+  z-index: 110;
+  background-color: hsla(0, 100%, 1%, 0.5);
+  place-content: center;
+}
+
+
+.game-over{
+  bottom: 40%;
+}
+
+.replay-btn-container, .game-over-text, #game-over-screen{
+  z-index: 100;
+}
+
+@keyframes scale{
+  0%{
+    font-size: 1rem;
+  }
+  80%{
+    font-size: 3.5rem;
+  }
+  100%{
+    font-size: 3rem;
+  }
+}
+
+@keyframes gameOverAnimation{
+  0%{
+    background-color: hsla(0, 100%, 1%, 0.1);
+    opacity: 0;
+  }
+  100%{
+    background-color: hsla(0, 100%, 1%, 0.5);
+    font-size: inherit;
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 1500px) {
+  .container {
+    width: 100%;
+  }
+  .hero{
+    width: 100%;
+  }
+}
+
+/* @media only screen and (max-width: 1400px) {
+  .hero{
+      width: 100%;
+  }
+
+} */
+
+@media screen and (max-width: 900px) {
+  :root{
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .settings{
+    /* display: none; */
+    z-index: inherit;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    margin-top: 1rem;
+  }
+  /* .navbar img{
+    display: block;
+    margin-top: 3rem;
+    margin-left: 5%;
+  } */
+  .icon{
+    text-align: left;
+  }
+  /* .navbar{
+    height: 100vh;
+    width: 50%;
+    margin-left: -5.5%;
+    margin-top: -3rem;
+    z-index: 110;
+    background-color: purple;
+  } */
+
+}
+
+@media screen and (max-width: 400px) {
+  :root{
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  :root{
+    font-size: 10px;
+  }
+
+}

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/styleOfTicFreakinToe.css" />
+    <link rel="stylesheet" href="./css/navbar.css" />
+    <link rel="stylesheet" href="./css/realtimechat.css" />
+    <link rel="stylesheet" href="./css/anim.css" />
+    <title>TFT | Online</title>
+  </head>
+  <body>
+    <div class="container-wrapper">
+      <div class="not-allowed">
+        <p>| Room Is Full (Go Back) |</p>
+      </div>
+    <div class="container">
+      <audio id="winning-sound" src="./Sound Effects/winning_sound.wav"></audio>
+      <audio id="marking1-sound" src="./Sound Effects/markPos1.wav"></audio>
+      <audio id="marking2-sound" src="./Sound Effects/markPos2.wav"></audio>
+      <audio id="message-pop-sound" src="./Sound Effects/mixkit-message-pop-alert-2354.mp3"></audio>
+
+      <div class="navbar">
+
+        <ul class="navbar-nav">
+          <li class="logo">
+            <a href="/" class="nav-link">
+              <span class="logo-text">TFT</span>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M246.6 233.4l-160-160c-12.5-12.5-32.75-12.5-45.25 0s-12.5 32.75 0 45.25L178.8 256l-137.4 137.4c-12.5 12.5-12.5 32.75 0 45.25C47.63 444.9 55.81 448 64 448s16.38-3.125 22.62-9.375l160-160C259.1 266.1 259.1 245.9 246.6 233.4zM438.6 233.4l-160-160c-12.5-12.5-32.75-12.5-45.25 0s-12.5 32.75 0 45.25L370.8 256l-137.4 137.4c-12.5 12.5-12.5 32.75 0 45.25C239.6 444.9 247.8 448 256 448s16.38-3.125 22.62-9.375l160-160C451.1 266.1 451.1 245.9 438.6 233.4z"/></svg>
+            </a>
+          </li>
+          
+
+          <li class="nav-item">
+            <a href="./enterRoom.html" class="nav-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="21.78" height="19.361" viewBox="0 0 21.78 19.361">
+                <path id="Subtraction_1" data-name="Subtraction 1" d="M-2832.041-5594.639h-12.115a2.423,2.423,0,0,1-2.421-2.42v-6.065h-1.212a1.2,1.2,0,0,1-1.212-1.213,1.223,1.223,0,0,1,.378-.907l9.7-8.451a1.086,1.086,0,0,1,.831-.3,1.268,1.268,0,0,1,.8.266l4.028,3.542v-1.388a1.211,1.211,0,0,1,1.209-1.21h1.21a1.212,1.212,0,0,1,1.21,1.21V-5607l2,1.758a1.025,1.025,0,0,1,.417.907,1.228,1.228,0,0,1-1.21,1.213h-1.21l.027,6.054a2.414,2.414,0,0,1-.709,1.721A2.4,2.4,0,0,1-2832.041-5594.639Zm-8.841-7.322a.505.505,0,0,0-.506.5.506.506,0,0,0,.506.506h2.274v2.274a.5.5,0,0,0,.5.5.506.506,0,0,0,.506-.5v-2.274h2.274a.506.506,0,0,0,.5-.506.5.5,0,0,0-.5-.5h-2.274v-2.274a.507.507,0,0,0-.506-.506.506.506,0,0,0-.5.506v2.274Z" transform="translate(2849 5614)"/>
+              </svg>
+              
+              
+              <span class="link-text">Create Room</span>
+            </a>
+          </li>
+          
+          <li class="nav-item nav-message">
+            <a class="nav-link messages-icon">
+              <span class="something" >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M511.1 63.1v287.1c0 35.25-28.75 63.1-64 63.1h-144l-124.9 93.68c-7.875 5.75-19.12 .0497-19.12-9.7v-83.98h-96c-35.25 0-64-28.75-64-63.1V63.1c0-35.25 28.75-63.1 64-63.1h384C483.2 0 511.1 28.75 511.1 63.1z"/></svg>
+            </span>
+              <span class="link-text">Messages</span>
+            </a>
+          </li>
+          
+        </ul>
+      </div>
+      
+      <div class="show-the-text">
+        <p id="game-title-history"></p>
+        <p id="game-title">X's Turn: </p>
+      </div>
+      <div class="hero">
+        <div class="grid-container">
+          <div class="temp-board">
+          <div class="grid-item-container">
+            <div id="0" class="grid-item"></div>
+          </div>
+          <div class="grid-item-container">
+            <div id="1" class="grid-item"></div>
+          </div>
+          <div class="grid-item-container">
+            <div id="2" class="grid-item"></div>
+          </div>
+        </div>
+        <div class="temp-board">
+          <div class="grid-item-container">
+            <div id="3" class="grid-item"></div>
+          </div>
+          <div class="grid-item-container">
+            <div id="4" class="grid-item"></div>
+          </div>
+          <div class="grid-item-container">
+            <div id="5" class="grid-item"></div>
+          </div>
+        </div>
+        <div class="temp-board">
+          <div class="grid-item-container">
+            <div id="6" class="grid-item"></div>
+          </div>
+          <div class="grid-item-container">
+            <div id="7" class="grid-item"></div>
+          </div>
+          <div class="grid-item-container">
+            <div id="8" class="grid-item"></div>
+          </div>
+        </div>
+      </div>
+      <div class="replay-btn-container">
+        <button class="replay-btn" data-replay-btn>Restart</button>
+      </div>
+    </div>
+  </div>
+  <div id="built-in-realtime-chat">
+    <div>
+    <ul id="chat-ul" >
+      <li>
+        <div class="received">
+          <div class="user-name">Bot:</div>
+          <span class="message">Say Something..</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+<div id="chat-input-area" >
+  <form>
+    <input required placeholder="Enter Your Message..." type="text" class="chat-input">
+    <button id="send-chat-message" type="submit">Send</button>
+  </form>
+</div>
+    
+  </div>
+  <div id="game-over-screen">
+    <p class="game-over-text">Game Over!</p>
+    <div class="replay-btn-container op">
+      <button class="replay-btn-fix-it-later dope" data-replay-btn>Would You Like To Replay</button>
+    </div>
+  </div>
+</div>
+  </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.10.3/qs.min.js" integrity="sha512-juaCj8zi594KHQqb92foyp87mCSriYjw3BcTHaXsAn4pEB1YWh+z+XQScMxIxzsjfM4BeVFV3Ij113lIjWiC2w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="/socket.io/socket.io.js" ></script>
+  <script src="./js/brainOfTicFreakinToe.js" ></script>
+  <script src="./js/client.js" ></script>
+</html>
